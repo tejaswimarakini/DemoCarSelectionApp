@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.android.democarselectionapp.ui.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_carModelFragment"
+            app:destination="@id/carModelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carModelFragment"
+        android:name="com.android.democarselectionapp.ui.CarModelFragment"
+        android:label="CarModelFragment">
+        <action
+            android:id="@+id/action_carModelFragment_to_carDetailFragment"
+            app:destination="@id/carDetailFragment" />
+        <action
+            android:id="@+id/action_carModelFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/carDetailFragment"
+        android:name="com.android.democarselectionapp.ui.CarDetailFragment"
+        android:label="CarDetailFragment">
+        <action
+            android:id="@+id/action_carDetailFragment_to_carModelFragment"
+            app:destination="@id/carModelFragment"
+            app:popUpTo="@id/carModelFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
